@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vastraa | Women</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f9f9f9;
+  color:#333;
+}
+a{text-decoration:none}
+
+
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  width:100%;
+  height: 600px; /* was 700px */
+}
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+}
+.hero-content{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  color:#fff;
+}
+.hero-tag{
+   font-size:25.9px; 
+  letter-spacing:4px;
+  color:#e6c27a;
+}
+.hero-content h1{
+  font-family:'Playfair Display', serif;
+  font-size:64px;      /* moto heading */
+  font-weight:900;     /* bold */
+  margin:15px 0;
+  color:#fff;
+  letter-spacing:1px;
+}
+
+/* Responsive hero heading */
+@media(max-width:768px){
+  .hero-content h1{
+    font-size:42px;
+  }
+}
+
+.hero-btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 40px;
+  background:#c49a3a;
+  color:#000;
+  border-radius:40px;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section {
+  margin-top: -50px; /* reduce gap */
+  margin-bottom: 30px;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+.about-card {
+  max-width: 900px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 30px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* smaller shadow */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+.about-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.about-text h1{
+  font-family:'Playfair Display',serif;
+  font-size:38px;
+  margin-bottom:20px;
+}
+.about-text p{
+  line-height:1.8;
+  margin-bottom:15px;
+  color:#555;
+}
+.about-text span{
+  color:#b38b59;
+  font-weight:600;
+}
+.about-btn a{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 28px;
+  background:#3b2f2f;
+  color:#fff;
+  border-radius:30px;
+}
+.about-img img{
+  width:100%;
+  border-radius:20px;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:#222;
+  color:#fff;
+  padding:50px 20px;
+}
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:30px;
+}
+.footer-bottom{
+  text-align:center;
+  margin-top:30px;
+  color:#aaa;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .about-card{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-content h1{font-size:42px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER (UNCHANGED) ===== -->
+<header class="navbar">
+  <div class="brand">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png" alt="VASTRAA Logo" class="logo-img">
+    <span class="logo-text">VASTRAA FASHION</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="women.html" class="nav-item">Women</a>
+    <a href="men.html" class="nav-item">Men</a>
+    <a href="kids.html" class="nav-item">Kids</a>
+    <a href="contact.html" class="nav-item">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="signin.html" class="icon"><i class="fa-regular fa-user"></i></a>
+    <a href="cart.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+    <a href="heart.html" class="icon"><i class="fa fa-heart"></i></a>
+  </div>
+</header>
+
+
+<section class="hero">
+  <img src="bghero.jpg">
+  <div class="hero-content">
+    <span class="hero-tag">ABOUT VASTRAA</span>
+    <h1>Our Story</h1>
+    <p>Where tradition meets modern elegance</p>
+    <a href="#about" class="hero-btn">Explore Our Journey</a>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-card" id="aboutCard">
+
+    <div class="about-text">
+      <h1>About Vastraa</h1>
+      <p><span>Vastraa Fashion</span> is not just a brand — it’s a feeling of elegance,
+      tradition and modern style.</p>
+      <p>We bring hand-picked designs, premium fabrics and timeless fashion.</p>
+      <p>From daily wear to festive collections, Vastraa believes in quality & comfort.</p>
+      <div class="about-btn">
+        <a href="index.html">Explore Collection</a>
+      </div>
+    </div>
+
+    <div class="about-img">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png">
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div>
+      <h3>VASTRAA FASHION</h3>
+      <p>Where tradition meets modern elegance</p>
+    </div>
+    <div>
+      <p>📧 vastraaFashion@gmail.com</p>
+      <p>📞 +91 94000 72000</p>
+    </div>
+    <div>
+      <p>C.G. Road, Ahmedabad<br>Gujarat</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Vastraa Fashion
+  </div>
+</footer>
+
+<script>
+window.addEventListener("scroll",()=>{
+  const card=document.getElementById("aboutCard");
+  if(card.getBoundingClientRect().top < window.innerHeight-100){
+    card.classList.add("show");
+  }
+});
+</script>
+
+</body>
+</html>

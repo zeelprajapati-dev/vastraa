@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vastraa Fashion</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png"alt="VASTRAA Logo" class="logo-img">
+    <span class="logo-text">VASTRAA FASHION</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="women.html" class="nav-item">Women</a>
+    <a href="men.html" class="nav-item">Men</a>
+    <a href="kids.html" class="nav-item">Kids</a>
+    <a href="contact.html" class="nav-item">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="signin.html" class="icon"><i class="fa-regular fa-user"></i></a>
+    <a href="cart.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+    <a href="heart.html" class="icon"><i class="fa fa-heart"></i></a>
+  </div>
+</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Kurta Collection</title>
+  <link rel="stylesheet" href="minikurta.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero-kurta">
+  <div class="hero-content">
+    <h1>Mini Kurta Collection</h1>
+    <p>Comfort meets contemporary ethnic fashion</p>
+  </div>
+
+  <div class="hero-image">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\kids3.jpg" alt="Mini Kurta">
+  </div>
+</section>
+
+<!-- ================= COLLECTION SECTION ================= -->
+<section class="kurta-section">
+  <h2>Explore Mini Kurtas</h2>
+          <!-- Back Button -->
+<div class="back-btn">
+  <a href="kids.html">← Back to kids Collection</a>
+</div>
+  <p class="subtitle">Perfect for daily & festive wear</p>
+
+  <div class="kurta-grid">
+
+    <div class="kurta-card">
+      <div class="kurta-img">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Floral Mini Kurta.jpg">
+      </div>
+      <h4>Floral Mini Kurta</h4>
+      <span class="price">₹1,499</span>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="kurta-card">
+      <div class="kurta-img">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Cotton Straight Kurta.jpg">
+      </div>
+      <h4>Cotton Straight Kurta</h4>
+      <span class="price">₹1,299</span>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="kurta-card">
+      <div class="kurta-img">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Printed Mini Kurta.jpg">
+      </div>
+      <h4>Printed Mini Kurta</h4>
+      <span class="price">₹1,699</span>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Brand Info -->
+    <div class="footer-brand">
+      <h3>VASTRAA FASHION</h3>
+      <p>Where tradition meets modern elegance</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📧 vastraaFashion@gmail.com</p>
+      <p>📞 +91 94000 72000</p>
+    </div>
+
+    <!-- Address -->
+    <div class="footer-address">
+      <h4>Our Studio</h4>
+      <p>
+        Vastraa Fashion Studio<br>
+        C.G. Road, Ahmedabad – 380009<br>
+        Gujarat, India
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Vastraa Fashion. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- ================= ADD TO CART SCRIPT ================= -->
+<script>
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let existing = cart.find(item => item.name === name);
+  if(existing){
+    existing.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  window.location.href = 'cart.html';
+}
+
+// Add event to all "Add to Cart" buttons
+document.querySelectorAll('.kurta-card button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.kurta-card');
+    const name = card.querySelector('h4').innerText;
+    const priceText = card.querySelector('.price').innerText;
+    const price = parseInt(priceText.replace('₹','').replace(',',''));
+    addToCart(name, price);
+  });
+});
+</script>
+
+</body>
+</html>

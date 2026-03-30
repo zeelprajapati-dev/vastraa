@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vastraa Fashion</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+    /* ===== FEEDBACK ===== */
+    .feedback-carousel-section {
+      padding: 50px 20px;
+      background: #f9f9f9;
+      position: relative;
+    }
+
+    .carousel-wrapper {
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .feedback-card {
+      min-width: 260px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .feedback-card h4 {
+      color: #3b2f2f;
+      margin-bottom: 8px;
+    }
+
+    .stars {
+      color: #b38b59;
+      margin-bottom: 10px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #3b2f2f;
+      color: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: #b38b59;
+    }
+
+    .left-btn { left: -15px; }
+    .right-btn { right: -15px; }
+
+    .feedback-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #3b2f2f;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .feedback-btn:hover {
+      background: #b38b59;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<!-- HEADER / NAVBAR -->
+<header class="navbar">
+
+  <div class="brand">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png" alt="VASTRAA Logo" class="logo-img">
+    <span class="logo-text">VASTRAA FASHION</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="women.html" class="nav-item">Women</a>
+    <a href="men.html" class="nav-item">Men</a>
+    <a href="kids.html" class="nav-item">Kids</a>
+    <a href="contact.html" class="nav-item">Contact</a>
+  </nav>
+
+<div class="search-box" style="position: relative; width: 300px; margin: 10px auto;">
+  <input type="text" id="searchInput" placeholder="Search for Saree, Kurti, Dress..." style="width: 100%; padding: 10px 35px 10px 10px; border-radius:8px; border:1px solid #ccc;">
+  <span id="searchBtn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size:18px;">🔍</span>
+</div>
+ <div class="nav-actions" id="nav-actions">
+  <a href="signin.html" class="icon"><i class="fa-regular fa-user"></i></a>
+  <a href="cart.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+  <a href="heart.html" class="icon"><i class="fa fa-heart"></i></a>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="simple-hero">
+  <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\newarraivalhero.jpg" alt="Hero Image" class="hero-img">
+  <div class="hero-content">
+    <span class="hero-tag">ETHNIC LUXURY 2026</span>
+    <h1>VASTRAA</h1>
+    <p>Where Indian tradition meets modern elegance</p>
+  </div>
+</section>
+
+<!-- NEW ARRIVALS SECTION -->
+<section class="section">
+  <h2>New Arrivals</h2>
+  <p class="subtitle">Check out our latest collection</p>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="pentagon">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\newsaree.jpg">
+        <span class="heart"
+          data-name="Elegant Saree"
+          data-price="49.99"
+          data-image="C:\Users\Nidhi\Desktop\CODE\vastraa\newsaree.jpg">
+          &#10084;
+        </span>
+      </div>
+      <h4>Elegant Saree</h4>
+      <p class="price">₹49.99</p>
+      <a href="elegantsaree.html" class="btn">Shop Now</a>
+    </div>
+
+    <div class="product-card">
+      <div class="pentagon">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\newjwellery.jpg">
+        <span class="heart"
+          data-name="Accessories"
+          data-price="59.99"
+          data-image="C:\Users\Nidhi\Desktop\CODE\vastraa\newjwellery.jpg">
+          &#10084;
+        </span>
+      </div>
+      <h4>Accessories</h4>
+      <p class="price">₹59.99</p>
+      <a href="Accessories.html" class="btn">Shop Now</a>
+    </div>
+
+    <div class="product-card">
+      <div class="pentagon">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\co-ord set new arrival.jpg">
+        <span class="heart"
+          data-name="Co-ord Sets"
+          data-price="39.99"
+          data-image="C:\Users\Nidhi\Desktop\CODE\vastraa\co-ord set new arrival.jpg">
+          &#10084;
+        </span>
+      </div>
+      <h4>Co-ord Sets</h4>
+      <p class="price">₹39.99</p>
+      <a href="Co-ord Sets.html" class="btn">Shop Now</a>
+    </div>
+
+    <div class="product-card">
+      <div class="pentagon">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\footwear.jpg">
+        <span class="heart"
+          data-name="Footwear"
+          data-price="19.99"
+          data-image="C:\Users\Nidhi\Desktop\CODE\vastraa\footwear.jpg">
+          &#10084;
+        </span>
+      </div>
+      <h4>Footwear</h4>
+      <p class="price">₹19.99</p>
+      <a href="Footwear.html" class="btn">Shop Now</a>
+    </div>
+
+  </div>
+</section>
+<!-- BANNER -->
+<section class="banner">
+  <div class="banner-overlay">
+    <div class="banner-content">
+      <h2>Accessories That Elevate</h2>
+      <p class="discount">🎉 20% OFF Today Only!</p>
+      <p>Complete your look with elegance</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png" alt="Vastraa Fashion">
+    </div>
+
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p>
+        <strong>Vastraa Fashion</strong> blends traditional Indian elegance with
+        modern design to create timeless styles that celebrate heritage and individuality.
+      </p>
+      <p>
+        Inspired by rich cultural artistry and contemporary fashion trends,
+        each collection is crafted with premium fabrics, fine detailing,
+        and refined craftsmanship.
+      </p>
+
+      <!-- ✅ Read More Button -->
+      <a href="about.html" style="
+          display: inline-block;
+          padding: 10px 20px;
+          background: #333;
+          color: #fff;
+          border-radius: 8px;
+          text-decoration: none;
+          margin-top: 15px;
+          transition: 0.3s;
+        " 
+        onmouseover="this.style.background='#555'"
+        onmouseout="this.style.background='#333'"
+      >Read More</a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CUSTOMER FEEDBACK CAROUSEL ===== -->
+<!-- ===== CUSTOMER FEEDBACK CAROUSEL ===== -->
+<section class="feedback-carousel-section">
+  <h2 style="text-align:center; margin-bottom:20px;">Customer Feedback</h2>
+
+  <div class="carousel-wrapper">
+
+    <button class="carousel-btn left-btn">&#10094;</button>
+    <button class="carousel-btn right-btn">&#10095;</button>
+
+    <div class="carousel" id="carousel">
+
+      <div class="feedback-card">
+        <h4>Priya S.</h4>
+        <div class="stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star-half-alt"></i>
+        </div>
+        <p>"Absolutely love the new collection! The fabrics are so comfortable."</p>
+      </div>
+
+      <div class="feedback-card">
+        <h4>Rohan K.</h4>
+        <div class="stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>"Great quality and quick delivery. Highly recommend Vastraa Fashion!"</p>
+      </div>
+
+      <div class="feedback-card">
+        <h4>Ayesha P.</h4>
+        <div class="stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
+          <i class="fa fa-star-o"></i>
+        </div>
+        <p>"Beautiful designs, but I wish there were more color options."</p>
+      </div>
+
+      <div class="feedback-card">
+        <h4>Karan M.</h4>
+        <div class="stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>"Excellent customer service! I will definitely buy again."</p>
+      </div>
+
+      <div class="feedback-card">
+        <h4>Meera L.</h4>
+        <div class="stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star"></i><i class="fa fa-star"></i>
+          <i class="fa fa-star-half-alt"></i>
+        </div>
+        <p>"Loved the personalized attention! Very happy with my purchase."</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:30px;">
+    <a href="feedback.html" class="feedback-btn">Give Your Feedback</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>VASTRAA FASHION</h3>
+      <p>Where tradition meets modern elegance</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📧 vastraaFashion@gmail.com</p>
+      <p>📞 +91 94000 72000</p>
+    </div>
+
+    <div class="footer-address">
+      <h4>Our Studio</h4>
+      <p>
+        Vastraa Fashion Studio<br>
+        C.G. Road, Ahmedabad – 380009<br>
+        Gujarat, India
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Vastraa Fashion. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ===== JS FOR FEEDBACK ===== -->
+<script>
+const carousel = document.getElementById("carousel");
+const leftBtn = document.querySelector(".left-btn");
+const rightBtn = document.querySelector(".right-btn");
+
+let scrollAmount = 0;
+const cardWidth = 280;
+
+rightBtn.onclick = () => {
+  scrollAmount += cardWidth;
+  if (scrollAmount > carousel.scrollWidth - carousel.clientWidth) {
+    scrollAmount = 0;
+  }
+  carousel.style.transform = `translateX(-${scrollAmount}px)`;
+};
+
+leftBtn.onclick = () => {
+  scrollAmount -= cardWidth;
+  if (scrollAmount < 0) {
+    scrollAmount = carousel.scrollWidth - carousel.clientWidth;
+  }
+  carousel.style.transform = `translateX(-${scrollAmount}px)`;
+};
+
+// Auto scroll
+setInterval(() => rightBtn.click(), 3000);
+</script>
+</body>
+</html>

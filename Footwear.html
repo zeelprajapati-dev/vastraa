@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vastraa Fashion</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="navbar.css">
+<style>
+    /* ===== RESET & BASIC ===== */
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+  /* ===== NAVBAR FONT CHANGE ONLY ===== */
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 7%;
+  background: #fdfaf5;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Lora', serif;
+}
+
+/* LOGO */
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 0px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #a1865d;
+  letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-item {
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #5c4b3c;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+  background: #a1865d;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(161,134,93,0.4);
+}
+
+/* NAV ACTIONS */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-signin {
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #a1865d;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-signin:hover {
+  background: #7c6346;
+  transform: scale(1.05);
+}
+
+.icon {
+  color: #5c4b3c;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  color: #a1865d;
+  transform: scale(1.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+}
+
+@media (max-width: 768px) {
+  .navbar { flex-wrap: wrap; padding: 15px 5%; }
+  .nav-actions { margin-top: 10px; }
+}
+
+
+    /* ===== HERO SECTION ===== */
+    .hero-section {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      padding:60px 20px;
+      background:#f1f8ff;
+      position:relative;
+    }
+    .hero-text {flex:1; min-width:300px; padding:20px; z-index:1;}
+    /* HEADINGS FONT – SAME AS INDEX */
+.hero-text h1,
+.collection-section h2,
+.collection-card h3,
+.footer h3,
+.footer h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+    .hero-text p {margin-bottom:25px; color:#333;}
+    .btn {padding:12px 28px; background:#1a3c6e; color:#fff; border:none; border-radius:5px; font-weight:500; transition:0.3s;}
+    .btn:hover {background:#123060; transform:translateY(-2px);}
+    .hero-image {flex:1; min-width:300px; padding:20px; position:relative;}
+    .hero-image img {border-radius:20px; box-shadow:0 12px 30px rgba(0,0,0,0.15);}
+    .hero-shape {
+      position:absolute;
+      width:400px;
+      height:400px;
+      background: #a8d0ff;
+      border-radius:50%;
+      top:-50px;
+      right:-50px;
+      z-index:0;
+      transform: rotate(45deg);
+      opacity:0.5;
+    }
+
+    /* ===== COLLECTION SECTION ===== */
+    .collection-section {padding:50px 20px;}
+    .collection-section h2 {text-align:center; font-size:2.5rem; margin-bottom:10px; color:#1a3c6e; font-family:'Playfair Display', serif;}
+    .collection-section .subtitle {text-align:center; margin-bottom:40px; color:#555;}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* EXACT 3 BIG CARDS */
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+.collection-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .collection-card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 12px 25px rgba(0,0,0,0.12);
+    }
+
+.collection-card img {
+  width: 100%;          /* IMPORTANT */
+  height: 280px;        /* BIG image */
+  object-fit: contain; /* full image dikhegi */
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+    .collection-card img:hover {transform:scale(1.05);}
+
+    .collection-card h3 {margin:10px 0 5px; color:#1a3c6e;}
+    .collection-card .price {color:#777; margin-bottom:15px; font-weight:500;}
+    .add-to-cart {
+      padding:10px 25px;
+      background:#1a3c6e;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:500;
+      transition:background 0.3s, transform 0.2s;
+    }
+    .add-to-cart:hover {background:#123060; transform:scale(1.05);}
+  
+
+    .collection-card {
+  position: relative;
+}
+
+.collection-section {
+  position: relative;
+}
+
+/* SECTION BACK BUTTON */
+.section-back-btn {
+  position: absolute;
+  top: 10px;
+  left: 200px;
+  background: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a3c6e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.section-back-btn:hover {
+  background: #1a3c6e;
+  color: #fff;
+  transform: translateX(-4px);
+}
+  </style>
+</head>
+
+<header class="navbar">
+  <div class="brand">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png"alt="VASTRAA Logo" class="logo-img">
+    <span class="logo-text">VASTRAA FASHION</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="women.html" class="nav-item">Women</a>
+    <a href="men.html" class="nav-item">Men</a>
+    <a href="kids.html" class="nav-item">Kids</a>
+    <a href="contact.html" class="nav-item">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="signin.html" class="icon"><i class="fa-regular fa-user"></i></a>
+    <a href="cart.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+    <a href="heart.html" class="icon"><i class="fa fa-heart"></i></a>
+  </div>
+</header>
+<body>
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="hero-text">
+    <h1>Step Up Your Style</h1>
+    <p>Explore our latest collection of premium footwear for every occasion.</p>
+    <a href="#collection" class="btn">Shop Now</a>
+  </div>
+  <div class="hero-image">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\footwearrrrrr.jpg" alt="Footwear Hero">
+    <div class="hero-shape"></div>
+  </div>
+</section>
+
+<section id="collection" class="collection-section">
+
+  <!-- BACK BUTTON -->
+  <button class="section-back-btn" onclick="goBack()">
+    <i class="fa fa-arrow-left"></i> Back
+  </button>
+
+  <h2>Our Footwear Collection</h2>
+  <p class="subtitle">Trendy, comfortable, and stylish shoes for every look</p>
+
+  <!-- GRID START -->
+  <div class="collection-grid">
+
+    <div class="collection-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\f20.jpg" alt="Sneakers">
+      <h3>Classic Sneakers</h3>
+      <p class="price">₹2,499</p>
+      <button class="add-to-cart" onclick="addToCart('Classic Sneakers', 2499)">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="collection-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\f21.jpg" alt="Heels">
+      <h3>Stylish Heels</h3>
+      <p class="price">₹3,299</p>
+      <button class="add-to-cart" onclick="addToCart('Stylish Heels', 3299)">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="collection-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\f24.jpg" alt="Loafers">
+      <h3>Premium Loafers</h3>
+      <p class="price">₹2,899</p>
+      <button class="add-to-cart" onclick="addToCart('Premium Loafers', 2899)">
+        Add to Cart
+      </button>
+    </div>
+
+  </div>
+  <!-- GRID END -->
+
+</section>
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>VASTRAA FASHION</h3>
+      <p>Where tradition meets modern elegance</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📧 vastraaFashion@gmail.com</p>
+      <p>📞 +91 94000 72000</p>
+    </div>
+
+    <div class="footer-address">
+      <h4>Our Studio</h4>
+      <p>
+        Vastraa Fashion Studio<br>
+        C.G. Road, Ahmedabad – 380009<br>
+        Gujarat, India
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Vastraa Fashion. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ADD TO CART SCRIPT -->
+<script>
+function goBack() {
+  window.history.back();
+}
+
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  window.location.href = 'cart.html';
+}
+</script>
+
+</body>
+</html>

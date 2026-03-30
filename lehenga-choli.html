@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vastraa Fashion</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png"alt="VASTRAA Logo" class="logo-img">
+    <span class="logo-text">VASTRAA FASHION</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="women.html" class="nav-item">Women</a>
+    <a href="men.html" class="nav-item">Men</a>
+    <a href="kids.html" class="nav-item">Kids</a>
+    <a href="contact.html" class="nav-item">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="signin.html" class="icon"><i class="fa-regular fa-user"></i></a>
+    <a href="cart.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+    <a href="heart.html" class="icon"><i class="fa fa-heart"></i></a>
+  </div>
+</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Kurta Collection</title>
+  <link rel="stylesheet" href="minikurta.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<!-- ================= HERO SECTION ================= -->
+<section class="lehenga-hero">
+  <div class="lehenga-hero-content">
+    <h1>Lehenga Choli</h1>
+    <p>Graceful silhouettes for weddings & festivities</p>
+  </div>
+  <div class="lehenga-hero-image">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\lehngakids hero.jpg" alt="Lehenga Choli">
+  </div>
+</section>
+
+<!-- ================= COLLECTION SECTION ================= -->
+<section class="lehenga-collection">
+  <h2>Our Exclusive Lehengas</h2>
+          <!-- Back Button -->
+<div class="back-btn">
+  <a href="kids.html">← Back to kids Collection</a>
+</div>
+  <p class="subtitle">Traditional charm with modern elegance</p>
+
+  <div class="lehenga-grid">
+
+    <div class="lehenga-card">
+      <div class="lehenga-img">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Red Lehenga.jpg">
+      </div>
+      <h4> Red Lehenga</h4>
+      <span class="price">₹12,999</span>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="lehenga-card">
+      <div class="lehenga-img">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Pastel Party Lehenga.jpg">
+      </div>
+      <h4>Pastel Party Lehenga</h4>
+      <span class="price">₹9,499</span>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="lehenga-card">
+      <div class="lehenga-img">
+        <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Embroidered Festive Lehenga.jpg">
+      </div>
+      <h4>Embroidered Festive Lehenga</h4>
+      <span class="price">₹10,999</span>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Brand Info -->
+    <div class="footer-brand">
+      <h3>VASTRAA FASHION</h3>
+      <p>Where tradition meets modern elegance</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📧 vastraaFashion@gmail.com</p>
+      <p>📞 +91 94000 72000</p>
+    </div>
+
+    <!-- Address -->
+    <div class="footer-address">
+      <h4>Our Studio</h4>
+      <p>
+        Vastraa Fashion Studio<br>
+        C.G. Road, Ahmedabad – 380009<br>
+        Gujarat, India
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Vastraa Fashion. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- ================= ADD TO CART SCRIPT ================= -->
+<script>
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let existing = cart.find(item => item.name === name);
+  if(existing){
+    existing.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  window.location.href = 'cart.html';
+}
+
+// Attach click event to all Add to Cart buttons
+document.querySelectorAll('.lehenga-card button, .hero-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('div.lehenga-card') || document.querySelector('.lehenga-hero-content');
+    const nameEl = card.querySelector('h4, h1');
+    const priceEl = card.querySelector('.price') || { innerText: '0' };
+    const name = nameEl.innerText;
+    const price = parseInt(priceEl.innerText.replace('₹','').replace(',','')) || 0;
+    addToCart(name, price);
+  });
+});
+</script>
+</body>
+</html>

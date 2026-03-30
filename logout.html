@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vastraa Fashion - Logout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdf5f0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #ff6f61;
+      color: white;
+    }
+    nav span, nav button {
+      font-weight: 600;
+      cursor: pointer;
+    }
+    nav button {
+      background: white;
+      color: #ff6f61;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+    }
+    main h1 {
+      color: #333;
+    }
+    main button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav>
+  <span id="usernameDisplay">Login</span>
+  <button id="logoutBtn" style="display:none;">Logout</button>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <h1>Welcome to Vastraa Fashion</h1>
+  <button onclick="goToCart()">Go to Cart</button>
+  <button onclick="goToHeart()">Go to Liked Products</button>
+</main>
+
+<!-- Link your storage.js -->
+<script src="storage.js"></script>
+
+<script>
+  const usernameDisplay = document.getElementById('usernameDisplay');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  // Show username and logout button if logged in
+  function updateNavbar() {
+    if(isLoggedIn()){
+      const name = getCurrentUserName();
+      usernameDisplay.textContent = `Hi, ${name}`;
+      logoutBtn.style.display = 'inline-block';
+    } else {
+      usernameDisplay.textContent = 'Login';
+      logoutBtn.style.display = 'none';
+    }
+  }
+
+  updateNavbar();
+
+  // Logout button functionality
+  logoutBtn.addEventListener('click', () => {
+    logoutUser();
+    alert('You have been logged out!');
+    updateNavbar();
+    window.location.href = 'signin.html';
+  });
+
+  // Login required before cart
+  function goToCart() {
+    if(!isLoggedIn()){
+      alert('Please login first!');
+      window.location.href = 'signin.html';
+      return;
+    }
+    window.location.href = 'cart.html';
+  }
+
+  // Login required before heart
+  function goToHeart() {
+    if(!isLoggedIn()){
+      alert('Please login first!');
+      window.location.href = 'signin.html';
+      return;
+    }
+    window.location.href = 'heart.html';
+  }
+</script>
+
+</body>
+</html>

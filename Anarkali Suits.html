@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anarkali Suits | Vastraa Fashion</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png" alt="VASTRAA Logo" class="logo-img">
+    <span class="logo-text">VASTRAA FASHION</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="women.html" class="nav-item">Women</a>
+    <a href="men.html" class="nav-item">Men</a>
+    <a href="kids.html" class="nav-item">Kids</a>
+    <a href="contact.html" class="nav-item">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="signin.html" class="icon"><i class="fa-regular fa-user"></i></a>
+    <a href="cart.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+    <a href="heart.html" class="icon"><i class="fa fa-heart"></i></a>
+  </div>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="anarkali-hero">
+  <div class="anarkali-hero-content">
+    <span class="offer-tag">Royal Festive Offer • 25% OFF</span>
+    <h1>Elegant Anarkali Suits</h1>
+    <p>Timeless grace with regal flow</p>
+    <a href="#anarkali-collection" class="shop-btn">Shop Now</a>
+  </div>
+
+  <div class="anarkali-hero-image">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\anarkalihero.jpg" alt="Anarkali Suit">
+  </div>
+</section>
+
+<!-- ===== COLLECTION ===== -->
+<section class="anarkali-collection" id="anarkali-collection">
+  <h2>Explore Anarkali Collection</h2>
+
+  <!-- Back Button -->
+  <div class="back-btn">
+    <a href="women.html">← Back to Women Collection</a>
+  </div>
+
+  <div class="anarkali-grid">
+
+    <div class="anarkali-card featured-anarkali">
+      <span class="featured-badge">Bridal Pick</span>
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Designer Anarkali Suit.jpg" alt="Designer Anarkali">
+      <h3>Designer Anarkali Suit</h3>
+      <p class="price">₹6,999</p>
+      <button class="cart-btn" onclick="addToCart('Designer Anarkali Suit', 6999)">
+        <i class="fa fa-cart-shopping"></i> Add to Cart
+      </button>
+    </div>
+
+    <div class="anarkali-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Embroidered Anarkali Suit.jpg" alt="Embroidered Anarkali">
+      <h3>Embroidered Anarkali Suit</h3>
+      <p class="price">₹5,499</p>
+      <button class="cart-btn" onclick="addToCart('Embroidered Anarkali Suit', 5499)">
+        <i class="fa fa-cart-shopping"></i> Add to Cart
+      </button>
+    </div>
+
+    <div class="anarkali-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Printed Anarkali Sui.jpg" alt="Printed Anarkali">
+      <h3>Printed Anarkali Suit</h3>
+      <p class="price">₹4,299</p>
+      <button class="cart-btn" onclick="addToCart('Printed Anarkali Suit', 4299)">
+        <i class="fa fa-cart-shopping"></i> Add to Cart
+      </button>
+    </div>
+
+    <div class="anarkali-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Festive Anarkali Suit.jpg" alt="Festive Anarkali">
+      <h3>Festive Anarkali Suit</h3>
+      <p class="price">₹7,999</p>
+      <button class="cart-btn" onclick="addToCart('Festive Anarkali Suit', 7999)">
+        <i class="fa fa-cart-shopping"></i> Add to Cart
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>VASTRAA FASHION</h3>
+      <p>Where tradition meets modern elegance</p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📧 vastraaFashion@gmail.com</p>
+      <p>📞 +91 94000 72000</p>
+    </div>
+
+    <div class="footer-address">
+      <h4>Our Studio</h4>
+      <p>
+        Vastraa Fashion Studio<br>
+        C.G. Road, Ahmedabad – 380009<br>
+        Gujarat, India
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Vastraa Fashion. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ===== ADD TO CART SCRIPT ===== -->
+<script>
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ name: name, price: price, quantity: 1 });
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  window.location.href = 'cart.html';
+}
+</script>
+
+</body>
+</html>

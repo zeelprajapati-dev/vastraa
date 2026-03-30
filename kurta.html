@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vastraa Fashion</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\ChatGPT Image Dec 29, 2025, 01_26_18 PM.png" alt="VASTRAA Logo" class="logo-img">
+    <span class="logo-text">VASTRAA FASHION</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="women.html" class="nav-item">Women</a>
+    <a href="men.html" class="nav-item">Men</a>
+    <a href="kids.html" class="nav-item">Kids</a>
+    <a href="contact.html" class="nav-item">Contact</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="signin.html" class="icon"><i class="fa-regular fa-user"></i></a>
+    <a href="cart.html" class="icon"><i class="fa fa-shopping-cart"></i></a>
+    <a href="heart.html" class="icon"><i class="fa fa-heart"></i></a>
+  </div>
+</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kurta Collection | Vastraa Fashion</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section class="kurta-hero">
+  <div class="hero-left">
+    <span class="hero-badge">MEN'S ETHNIC WEAR</span>
+    <h1>
+      Royal <span>Kurta</span><br>
+      Collection
+    </h1>
+    <p>
+      Elegant styles for festive, wedding & traditional occasions
+    </p>
+  </div>
+
+  <div class="hero-right">
+    <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\kurtosmenhero.jpg"" alt="Kurta Collection">
+  </div>
+</section>
+
+<!-- =========================
+     KURTA COLLECTION
+========================= -->
+<section class="kurta-collection">
+  <h2>Explore Our Kurtas</h2>
+    <!-- Back Button -->
+<div class="back-btn">
+  <a href="men.html">← Back to men Collection</a>
+</div>
+
+  <div class="kurta-grid">
+
+    <div class="kurta-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Silk Festive Kurta.jpg" alt="Silk Kurta">
+      <h3>Silk Festive Kurta</h3>
+      <p class="price">₹2,999</p>
+      <button class="shop-btn">Shop Now</button>
+    </div>
+
+    <div class="kurta-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Cotton Daily Kurta.jpg" alt="Cotton Kurta">
+      <h3>Cotton Daily Kurta</h3>
+      <p class="price">₹1,799</p>
+      <button class="shop-btn">Shop Now</button>
+    </div>
+
+    <div class="kurta-card featured">
+      <span class="tag">BEST SELLER</span>
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Designer Kurta Set.jpg" alt="Designer Kurta">
+      <h3>Designer Kurta Set</h3>
+      <p class="price">₹3,999</p>
+      <button class="shop-btn">Shop Now</button>
+    </div>
+
+    <div class="kurta-card">
+      <img src="C:\Users\Nidhi\Desktop\CODE\vastraa\Printed Fusion Kurta.jpg"alt="Printed Kurta">
+      <h3>Printed Fusion Kurta</h3>
+      <p class="price">₹2,499</p>
+      <button class="shop-btn">Shop Now</button>
+    </div>
+
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Brand Info -->
+    <div class="footer-brand">
+      <h3>VASTRAA FASHION</h3>
+      <p>Where tradition meets modern elegance</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📧 vastraaFashion@gmail.com</p>
+      <p>📞 +91 94000 72000</p>
+    </div>
+
+    <!-- Address -->
+    <div class="footer-address">
+      <h4>Our Studio</h4>
+      <p>
+        Vastraa Fashion Studio<br>
+        C.G. Road, Ahmedabad – 380009<br>
+        Gujarat, India
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Vastraa Fashion. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- Add this script at the end of your body, before </body> -->
+<script>
+function addToCart(name, price) {
+  // Get existing cart from localStorage or empty array
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+  // Check if item already exists
+  let existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ name: name, price: price, quantity: 1 });
+  }
+
+  // Save back to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Redirect to cart page
+  window.location.href = 'cart.html';
+}
+
+// Attach click events to all Add to Cart buttons
+document.querySelectorAll('.kurta-card .shop-btn').forEach((btn, index) => {
+  const cards = document.querySelectorAll('.kurta-card');
+  btn.addEventListener('click', (e) => {
+    e.preventDefault(); // prevent default button behavior
+    const name = cards[index].querySelector('h3').innerText;
+    const priceText = cards[index].querySelector('.price').innerText;
+    const price = parseInt(priceText.replace('₹','').replace(',',''));
+    addToCart(name, price);
+  });
+});
+</script>
+
+</body>
+</html>
