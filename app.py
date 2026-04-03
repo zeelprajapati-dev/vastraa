@@ -1,7 +1,6 @@
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, render_template
 import sqlite3
 import os
-
 
 app = Flask(__name__)
 
@@ -18,7 +17,7 @@ def check_user(email, password):
     conn.close()
     return user
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         email = request.form["email"]
@@ -31,12 +30,10 @@ def login():
         else:
             return "Invalid Email or Password ❌"
 
-    return send_from_directory(os.getcwd(), "signin.html")
-
+    return render_template("signin.html")
 
 @app.route("/users")
 def show_users():
-    import sqlite3
     conn = sqlite3.connect("vastraa.db")
     cursor = conn.cursor()
 
@@ -46,18 +43,16 @@ def show_users():
     conn.close()
     return render_template("users.html", users=users)
 
-
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
 @app.route("/")
-def signin():
-    return render_template("signin.html")
+def index():
+    return send_from_directory(os.getcwd(), "index.html")
+
+@app.route("/<path:path>")
+def serve_static_html(path):
+    if path.endswith(".html"):
+        return send_from_directory(os.getcwd(), path)
+    return "File not found", 404
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
